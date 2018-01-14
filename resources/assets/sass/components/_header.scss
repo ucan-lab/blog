@@ -1,0 +1,44 @@
+header {
+    background-color: hsl(220, 80%, 60%);
+    color: white;
+
+    nav {
+        height: 50px;
+        padding: 0px 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // flex-direction: row-reverse;
+
+        .title {
+            font-size: 1.2rem;
+        }
+
+        ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                height: 50px;
+                line-height: 50px;
+                font-size: 0.8rem;
+
+                a {
+                    padding: 0px 1rem;
+                    display: inline-block;
+                    height: 100%;
+                    color: inherit;
+                    text-decoration: none;
+                    background-color: hsl(220, 80%, 60%);
+
+                    transition: 256ms;
+                    &:hover {
+                        -webkit-filter: brightness(85%);
+                    }
+                }
+            }
+        }
+    }
+}
