@@ -1,0 +1,30 @@
+#posts {
+    display: flex;
+
+    .left {
+        flex: 1;
+        background: tomato;
+        padding: 0 10px;
+    }
+
+    .right {
+        flex: 0 180px;
+        background: pink;
+        padding: 0 10px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #posts {
+        flex-direction: column;
+
+        .left {
+            order: 1;
+            flex: 100%;
+        }
+        .right {
+            order: 2;
+            flex: 100%;
+        }
+    }
+}

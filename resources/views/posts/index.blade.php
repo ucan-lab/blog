@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <ul>
-        @foreach ($posts as $post)
-            <li>{{ $post->title }}</li>
-        @endforeach
-    </ul>
+    <div id="posts">
+        <div class="left">
+            <ul>
+                @foreach ($posts as $post)
+                    <li>{{ $post->title }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="right">
+        </div>
+    </div>
 @endsection
