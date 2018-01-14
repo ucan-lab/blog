@@ -15,6 +15,8 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100)->comment('タグ名');
+            $table->string('description', 255)->nullable()->comment('タグ説明');
             $table->timestamps();
         });
     }
