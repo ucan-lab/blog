@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\Post\PostRepositoryInterface;
+use App\Models\Category;
 
 class PostsController extends Controller
 {
@@ -20,7 +21,11 @@ class PostsController extends Controller
     public function index()
     {
         $posts = $this->repository->index();
-        return view('posts.index', ['posts' => $posts]);
+        $categories = Category::all();
+        return view('posts.index', [
+            'posts' => $posts,
+            'categories' => $categories,
+        ]);
     }
 
     /**

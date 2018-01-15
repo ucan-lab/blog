@@ -10,6 +10,7 @@
             </ul>
         </div>
         <div class="right">
+            @include('components.sidebar')
         </div>
     </div>
 @endsection
