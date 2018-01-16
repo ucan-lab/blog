@@ -1,0 +1,47 @@
+.calendar {
+    max-width: 768px;
+
+    .control {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .week {
+        display: flex;
+    }
+
+    .day {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+    }
+
+    .month {
+        margin: 20px auto;
+    }
+
+    .week {
+        height: 40px;
+    }
+
+    .day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #333;
+        padding: 5px;
+        background-color: transparentize(white, 0.30);
+        box-shadow:
+            -1px -1px #ccc,
+            inset -1px -1px 0 0 #ccc;
+    }
+
+    .day.day-sunday {
+        color: red;
+    }
+
+    .day.day-saturday {
+        color: blue;
+    }
+}
