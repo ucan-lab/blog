@@ -16,17 +16,24 @@
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 768px) {
     #posts {
         flex-direction: column;
+        width: 100%;
 
         .left {
             order: 1;
             flex: 100%;
+            padding: 0;
         }
         .right {
             order: 2;
             flex: 100%;
+            padding: 0;
+
+            .sidebar {
+                margin: 0;
+            }
         }
     }
 }
@@ -38,7 +45,7 @@
 .card {
     padding: 0 15px;
     margin-bottom: 30px;
-    color: #fff;
+    color: #333;
     font-size: 14px;
     box-shadow: 0 0 0 transparent;
 }
@@ -53,10 +60,12 @@
 }
 
 .card-tomato {
+    color: #fff;
     background-color: tomato;
 }
 
 .card-gray {
+    color: #fff;
     background-color: #525252;
 }
 
