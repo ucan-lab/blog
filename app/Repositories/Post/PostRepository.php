@@ -25,4 +25,14 @@ class PostRepository implements PostRepositoryInterface
     {
         return $this->post->all();
     }
+
+    public function store($attributes)
+    {
+        return $this->post->create($attributes);
+    }
+
+    public function update($attributes)
+    {
+        return $this->post->update($attributes);
+    }
 }

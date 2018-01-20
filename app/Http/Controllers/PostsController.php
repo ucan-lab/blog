@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Repositories\Post\PostRepositoryInterface;
-use App\Models\Category;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -20,11 +20,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = $this->repository->index();
-        $categories = Category::all();
         return view('posts.index', [
-            'posts' => $posts,
-            'categories' => $categories,
+            'posts' => $this->repository->index(),
         ]);
     }
 
@@ -35,16 +32,16 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //
     }
@@ -55,9 +52,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        //
+        return view('posts.show', ['post' => $post]);
     }
 
     /**
@@ -68,17 +65,17 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
         //
     }
@@ -89,8 +86,8 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
     }
 }

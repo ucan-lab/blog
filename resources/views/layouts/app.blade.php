@@ -17,7 +17,7 @@
     <div id="app">
         @include('components.header')
         <main>
-            @yield('content')
+            @yield('frame')
         </main>
         @include('components.footer')
     </div>
