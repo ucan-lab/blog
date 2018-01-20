@@ -1,82 +1,98 @@
-#posts {
-    display: flex;
-    width: 1140px;
-    margin: 40px auto;
-
-    .left {
-        flex: 1;
-        background: tomato;
-        padding: 0 10px;
+.one-column {
+    #posts {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 1140px;
+        margin: 40px auto;
     }
 
-    .right {
-        flex: 0 320px;
-        // background: pink;
-        padding: 0 10px;
+    .card {
+        width: 100%;
     }
 }
 
-@media all and (max-width: 768px) {
+.two-column {
     #posts {
-        flex-direction: column;
-        width: 100%;
+        display: flex;
+        width: 1140px;
+        margin: 40px auto;
 
         .left {
-            order: 1;
-            flex: 100%;
-            padding: 0;
+            flex: 1;
+            background: tomato;
+            padding: 0 10px;
         }
-        .right {
-            order: 2;
-            flex: 100%;
-            padding: 0;
 
-            .sidebar {
-                margin: 0;
+        .right {
+            flex: 0 320px;
+            // background: pink;
+            padding: 0 10px;
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        #posts {
+            flex-direction: column;
+            width: 100%;
+
+            .left {
+                order: 1;
+                flex: 100%;
+                padding: 0;
+            }
+            .right {
+                order: 2;
+                flex: 100%;
+                padding: 0;
+
+                .sidebar {
+                    margin: 0;
+                }
             }
         }
     }
-}
 
-.sidebar {
-    margin: 0 15px;
-}
-
-.card {
-    padding: 0 15px;
-    margin-bottom: 30px;
-    color: #333;
-    font-size: 14px;
-    box-shadow: 0 0 0 transparent;
-}
-
-.card-header {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-    h2 {
-        margin: 0;
-        font-size: 18px;
+    .sidebar {
+        margin: 0 15px;
     }
-}
 
-.card-tomato {
-    color: #fff;
-    background-color: tomato;
-}
+    .card {
+        padding: 0 15px;
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 14px;
+        box-shadow: 0 0 0 transparent;
+    }
 
-.card-gray {
-    color: #fff;
-    background-color: #525252;
-}
+    .card-header {
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
 
-.card-content {
-    padding: 20px 0;
-    ul {
-        padding: 0 0 0 20px;
-        margin: 0;
+    .card-tomato {
+        color: #fff;
+        background-color: tomato;
+    }
 
-        li {
-            margin-bottom: 5px;
+    .card-gray {
+        color: #fff;
+        background-color: #525252;
+    }
+
+    .card-content {
+        padding: 20px 0;
+        ul {
+            padding: 0 0 0 20px;
+            margin: 0;
+
+            li {
+                margin-bottom: 5px;
+            }
         }
     }
 }
