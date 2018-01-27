@@ -1,11 +1,12 @@
 <header>
     <nav>
-        <div class='title'>title</div>
+        <a href="/" class="title">Blog</a>
         <ul>
-            <li><a href=''>item1</a></li>
-            <li><a href=''>item2</a></li>
-            <li><a href=''>item3</a></li>
-            <li><a href=''>item4</a></li>
+            @if (auth()->check())
+                <li><a href="{{ route('posts.create') }}">記事投稿</a></li>
+            @else
+                <li><a href="{{ route('login') }}">ログイン</a></li>
+            @endif
         </ul>
     </nav>
 </header>
