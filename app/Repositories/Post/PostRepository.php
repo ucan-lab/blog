@@ -23,16 +23,16 @@ class PostRepository implements PostRepositoryInterface
      */
     public function index()
     {
-        return $this->post->all();
+        return $this->post->latest()->get();
     }
 
-    public function store($attributes)
+    public function save(Post $post)
     {
-        return $this->post->create($attributes);
+        return $post->save();
     }
 
-    public function update($attributes)
+    public function delete(Post $post)
     {
-        return $this->post->update($attributes);
+        return $post->delete();
     }
 }

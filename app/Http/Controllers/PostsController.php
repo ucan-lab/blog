@@ -10,6 +10,7 @@ class PostsController extends Controller
 {
     public function __construct(PostRepositoryInterface $repository)
     {
+        $this->middleware('auth')->except(['index', 'show']);
         $this->repository = $repository;
     }
 
@@ -32,7 +33,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create', ['post' => new Post]);
     }
 
     /**
@@ -43,7 +44,11 @@ class PostsController extends Controller
      */
     public function store(PostRequest $request)
     {
-        //
+        $post = new Post($request->all());
+        $post->user_id = auth()->user()->id;
+        $this->repository->save($post);
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -63,7 +68,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
         return view('posts.edit', ['post' => $post]);
     }
@@ -77,7 +82,10 @@ class PostsController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->fill($request->all());
+        $this->repository->save($post);
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

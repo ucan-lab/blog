@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Repositories\Post;
+use App\Models\Post;
 
 interface PostRepositoryInterface
 {
-    /**
-     * 記事一覧
-     *
-     * @return collection
-     */
     public function index();
+    public function save(Post $post);
+    // public function delete(Post $post);
 }
