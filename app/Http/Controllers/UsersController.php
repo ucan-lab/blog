@@ -8,6 +8,7 @@ class UsersController extends Controller
 {
     public function __construct(UserRepositoryInterface $user_repository)
     {
+        $this->middleware('auth')->except(['index', 'show']);
         $this->user_repository = $user_repository;
     }
 
