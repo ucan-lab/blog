@@ -12,8 +12,11 @@
 @import "~normalize.css";
 
 @import "components/common";
+@import "components/messages";
+@import "components/buttons";
 @import "components/header";
 @import "components/footer";
 @import "components/calendar";
 
+@import "pages/login";
 @import "pages/posts";

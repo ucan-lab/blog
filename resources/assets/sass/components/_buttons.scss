@@ -1,0 +1,53 @@
+.btn {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #333;
+    border: solid 2px #333;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.btn:hover {
+    background: #67c5ff;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-defalt {
+    color: #333;
+    border: solid 2px #333;
+}
+
+.btn-primary {
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+}
+
+.btn-circle {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #b5b5b5;
+}
+.btn-circle .fa {
+    line-height: 80px;
+}
+.btn-circle:active {
+    background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: none;
+}

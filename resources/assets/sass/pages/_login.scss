@@ -1,0 +1,44 @@
+input,
+textarea {
+  outline: none;
+  border: 1px solid #aaa;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  line-height: 1.5em;
+  padding: 5px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 7px #1abc9c;
+  border: 1px solid #1abc9c;
+}
+
+:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 40px auto;
+
+    form {
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+        }
+
+        div {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+}

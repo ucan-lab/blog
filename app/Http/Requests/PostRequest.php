@@ -23,9 +23,16 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required|unique:posts|max:255',
+        $rules = [
+            'title' => 'required|max:255|unique:posts',
             'body' => 'required',
         ];
+
+        if ($this->route('post')) {
+            $id = $this->route('post')->id;
+            $rules['title'] = "required|unique:posts,id,$id|max:255";
+        }
+
+        return $rules;
     }
 }
